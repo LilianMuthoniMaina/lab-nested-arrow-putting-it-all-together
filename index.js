@@ -1,4 +1,5 @@
- function createLoginTracker(userInfo){
+
+function createLoginTracker(userInfo){
   let attemptCount = 0;
   return (passwordAttempt) => {
     attemptCount++;
@@ -14,4 +15,5 @@
  }
 
 module.exports = {
-createLoginTracker};
+...(typeof createLoginTracker !== 'undefined' && {createLoginTracker})
+};
